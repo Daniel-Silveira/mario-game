@@ -1,0 +1,99 @@
+.app {
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  animation: background_animation 60s infinite ease-in-out;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 97%;
+}
+
+.floor {
+  background: limegreen;
+  bottom: 0;
+  height: 30px;
+  position: absolute;
+  width: 100%;
+  padding: .3em;
+  box-sizing: border-box;
+  font-weight: bold;
+  text-align: end;
+}
+
+.wrapper-mario {
+  z-index: 1;
+  transform: translateX(165px);
+}
+
+.mario {
+  height: 100px;
+}
+
+.jump-animation {
+  animation: mario_animation 0.5s linear;
+}
+
+.pipe {
+  width: 50px;
+  position: absolute;
+  bottom: 1.3em;
+}
+
+.pipe-animation {
+  animation: pipe_animation 3s infinite linear;
+}
+
+.clouds {
+  width: 200px;
+}
+
+.clouds-animation {
+  animation: clouds_animation 6s infinite linear;
+}
+
+@keyframes clouds_animation {
+  from {
+    transform: translateX(1500px);
+  }
+  to {
+    transform: translateX(-500px);
+  }
+}
+
+@keyframes pipe_animation {
+  from {
+    transform: translateX(1500px);
+  }
+  to {
+    transform: translateX(0px);
+  }
+}
+
+@keyframes mario_animation {
+  0% {
+    transform: translateY(0px) translateX(165px);
+  }
+  50% {
+    transform: translateY(-140px) translateX(165px);
+  }
+  100% {
+    transform: translateY(0px) translateX(165px);
+  }
+}
+
+@keyframes background_animation {
+  0% {
+    background-color: #9be5e4;
+  }
+  50% {
+    background-color: #223434;
+  }
+  100% {
+    background-color: #9be5e4;
+  }
+}
